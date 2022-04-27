@@ -1,0 +1,116 @@
+*,body,html{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-color: #cccfd9;
+    overflow: hidden;
+}
+
+@font-face {
+   font-family: 'Digital';
+   src: url(../assests/fonts/Digital7-1e1Z.ttf);
+}
+ button{
+   height: 60px;
+   width: 60px;
+   font-size: 22px;
+   margin-right: 20.1px;
+   margin-bottom: 10px;
+   border-radius: 20px;
+   border: none;
+   outline: none;
+ }
+.firstbox-row{
+   background: linear-gradient(145deg, #4c525f, #5a6170);
+   box-shadow: inset 8px 8px 16px 0 rgb(0 0 0 / 20%), inset -8px -8px 16px 0 rgb(255 255 255 / 0%);
+   color: white;
+   font-family: 'Roboto',sans-serif;
+   font-weight: 300;
+   color: #b6b6b6;
+}
+.thirdbox-row{
+   background:  #d5680d;
+   box-shadow: inset 8px 8px 16px 0 #70350494, inset -8px -8px 16px 0 rgb(255 255 255 / 0%);
+   font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+.fa-backspace{
+   color: #000000a8;
+}
+.secondbox-row{
+   background:#2a2d37;
+   box-shadow: inset 8px 8px 16px 0 rgb(0 0 0 / 20%), inset -8px -8px 16px 0 rgb(255 255 255 / 0%);
+   color: #b6b6b6;
+}
+ .container{
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 33%;
+   height: 100vh;
+}
+.calculator{
+   width: 63%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 80px 25px;
+   background-color: #343a43;
+   height: auto;
+   border-radius: 50px;
+}
+.calculator__display{
+   font-family: Digital;
+   font-size: 39px;
+   text-align: right;
+   margin-top: -44px;
+   color: #ffffffa3;
+}
+
+ .calculator__InnerResult {
+   font-family: Digital;
+   color: #ffffff;
+   font-size: 88px;
+   text-align: right;
+ }
+ .calculator__result {
+    width: 95%;
+    border: 1px solid transparent;
+    height: 61px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+ }
+
+ .calculator__keys{
+    position: relative;
+    width: 100%;
+ }
+
+ .calc_box1{
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 5px;
+ }
+
+ .calc_box2{
+    margin-left: 6px;
+ }
+
+ .btn0{
+    width: 144px;
+ }
+
+ .calc_box3{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -16px;
+    top: 20px;
+ }
