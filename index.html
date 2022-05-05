@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div> <p style="font-family: 'Digital';-webkit-text-fill-color: transparent;
+    <div class="bg-tag"> <p style="font-family: 'Digital';-webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #343a431a;position: absolute;top: 0;left: 21px;color: #00000005;width: 66%;height: auto;
             /* transform: rotate(-90deg); */font-size: 322px;z-index: -1;"> Calculator
               </p>
@@ -35,6 +35,9 @@
                     <button  class="firstbox-row" data-operator="clear" class="inputBox btnAC" onclick="removeAll()">AC</button>
                     <button class="key--operator inputBox btnMultiply firstbox-row" data-operator="*" value="*" onclick="calsi(this)">*</button>
                     <button class="key--operator inputBox btnDivide firstbox-row" data-operator="/" value="/" onclick="calsi(this)">/</button>
+                    <button class="inputBox btn7 secondbox-row" data-number="(" onclick="calsi(this)" value="(">(</button>
+                    <button class="inputBox btn7 secondbox-row" data-number=")" onclick="calsi(this)" value=")">)</button>
+                    <button class="inputBox btn7 secondbox-row" data-number="√" onclick="calsi(this)" value="√">√</button>
                     <button class="inputBox btn7 secondbox-row" data-number="7" onclick="calsi(this)" value="7">7</button>
                     <button class="inputBox btn8 secondbox-row" data-number="8" onclick="calsi(this)" value="8">8</button>
                     <button class="inputBox btn9 secondbox-row" data-number="9" onclick="calsi(this)" value="9">9</button>
@@ -57,6 +60,7 @@
                     <button class="key--operator inputBox btnSubstract thirdbox-row" data-operator="-" value="-" onclick="calsi(this)">-</button>
                     <button class="key--operator inputBox btnDivide thirdbox-row" data-operator="%" value="%" onclick="calsi(this)">%</button>
                     <button class="key--operator rightContainer btnEqual thirdbox-row" data-operator="=" onclick="equalsTo()" value="=">=</button>
+                    <button class="key--operator rightContainer btnEqual thirdbox-row" data-operator="^" onclick="calsi(this)" value="^">X <sup>y</sup></button>
                 </div>
                 
             </div>
@@ -64,6 +68,8 @@
     </div>
 
     <script src="./js/index.js"></script>
+    <!-- <script src="./js/Calc.js"></script> -->
+
 </body>
 
 </html>
