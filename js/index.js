@@ -8,7 +8,8 @@ let rootVal='';
 let powerval='';
 // let operator = ['*', '+', '-', '/', '.', '%','^','√'];
 let operator = ['*', '%', '-', '/', '.', '+','^','√'];
-
+// let modOp = ['*','-', '/', '+'];
+result.textContent = '0';
 function getResult() {
     let result = document.querySelector('.calculator__display').innerHTML
     return result;
@@ -29,20 +30,64 @@ function calsi(data) {
     // }
     
     if(newval === '%' || lastval=== '%'){
-        debugger
+    // debugger
+        // console.log('update value find operator :>> ', updateVal.split('').includes(modOp) === '+');
+        console.log('update value find operator :>> ', updateVal.split('').includes('+'));
+        if(updateVal.split('').slice(0, 3).includes('+')){
+
+            console.log('update split value plus :>> ',  updateVal.split(/[+*/-]+/));
+            
+            console.log('update split value plus :>> ',  updateVal.split(/[+*/-]+/).join('+').slice(0, 3));
+            
+            let moduleFirstVal = updateVal.split(/[+*/-]+/).join('+').slice(0, 3);
+            
+             console.log('update eval :>> ', eval(moduleFirstVal));
+               let modResult = eval(moduleFirstVal);
+               let resMod='';
+               resMod = (modResult * updateVal.slice(-3)) / 100;
+               total = modResult + resMod;
+        }
+        else
+        if(updateVal.split('').slice(0, 3).includes('-')){
+
+            console.log('update split value minus:>> ',  updateVal.split(/[+*/-]+/));
+            
+            console.log('update split value minus:>> ',  updateVal.split(/[+*/-]+/).join('-').slice(0, 3));
+            
+            let moduleFirstVal = updateVal.split(/[+*/-]+/).join('-').slice(0, 3);
+            
+             console.log('update eval :>> ', eval(moduleFirstVal));
+               let modResult = eval(moduleFirstVal);
+               let resMod='';
+               resMod = (modResult * updateVal.slice(-3)) / 100;
+               total = modResult + resMod;
+        }
+        // else if(){
+
+        // }
+ 
         // console.log('newval :>> ', newval);
-        // console.log('update split value :>> ',  updateVal.split(/[+*/-]+/).reverse().join().substring(2));
-        // let moduleFirstVal = updateVal.split(-1);
-        let moduleFirstVal =   updateVal.split(/[+*/-]+/).reverse().join('+').substring(3);
+        // // console.log('update split value :>> ',  updateVal.split(/[+*/-]+/).reverse().join().substring(2));
+        // console.log('update split value :>> ',  updateVal.split(/[+*/-]+/).join('-').slice(0, 3));
+        // // let moduleFirstVal = updateVal.split(-1);
+        // // let moduleFirstVal =   updateVal.split(/[+*/-]+/).reverse().join('+').substring(2);
+        // let moduleFirstVal =   updateVal.split(/[+*/-]+/).join('-').slice(0, 3);
         // console.log('update eval :>> ', eval(moduleFirstVal));
-         let modResult = eval(moduleFirstVal);
-         let resMod='';
-         resMod = (modResult * updateVal.slice(-3)) / 100;
-         total = modResult + resMod;
+        //  let modResult = eval(moduleFirstVal);
+        //  let resMod='';
+        //  resMod = (modResult * updateVal.slice(-1)) / 100;
+        //  total = modResult + resMod;
 
         // console.log('total vlaue :>> ', typeof(total));
         // console.log('last modulo value :>> ', lastval);
+      
     }
+
+    // else if(updateVal=== '%' && lastval=== '%'){
+    //         total = total / 100;
+    //         innerResult.innerResult  = total;
+
+    // }
     // else
     // if(updateVal.includes('(') && updateVal.includes(')') ){
     //     total = eval(updateVal);
@@ -144,7 +189,7 @@ function calsi(data) {
         if((!operator.includes(updateVal.slice(-1)))){
         total = eval(updateVal);
         }
-        innerResult.innerHTML =  total.toString().includes('.') ? total.toFixed(2) : total.toString();
+        innerResult.innerHTML =  total.toString().includes('.') ? total.toFixed(3) : total.toString();
         // setResult(updateVal);    
         if(lastval ==='%'){
             let newmod = modulevalu * newval;
@@ -182,7 +227,7 @@ function remove() {
 //remove Funtionality
 function removeAll() {
     updateVal = '';
-    result.innerHTML = '';
+    result.innerHTML = '0';
     innerResult.innerHTML = '';
     total = '';
 }
