@@ -6,9 +6,7 @@ let lastval='';
 let modulevalu ="";
 let rootVal='';
 let powerval='';
-// let operator = ['*', '+', '-', '/', '.', '%','^','√'];
 let operator = ['*', '%', '-', '/', '.', '+','^','√'];
-// let modOp = ['*','-', '/', '+'];
 result.textContent = '0';
 function getResult() {
     let result = document.querySelector('.calculator__display').innerHTML
@@ -32,7 +30,7 @@ function calsi(data) {
     if(newval === '%' || lastval=== '%'){
     // debugger
         // console.log('update value find operator :>> ', updateVal.split('').includes(modOp) === '+');
-        console.log('update value find operator :>> ', updateVal.split('').includes('+'));
+        
         if(updateVal.split('').slice(0, 3).includes('+')){
 
             console.log('update split value plus :>> ',  updateVal.split(/[+*/-]+/));
@@ -62,9 +60,36 @@ function calsi(data) {
                resMod = (modResult * updateVal.slice(-3)) / 100;
                total = modResult + resMod;
         }
-        // else if(){
-
-        // }
+        else 
+        if(updateVal.split('').slice(0, 3).includes('*')){
+            console.log('update split value multiply:>> ',  updateVal.split(/[+*/-]+/));
+            console.log('update split value multiply:>> ',  updateVal.split(/[+*/-]+/).join('*').slice(0, 3));
+            
+            let moduleFirstVal = updateVal.split(/[+*/-]+/).join('*').slice(0, 3);
+             console.log('update eval :>> ', eval(moduleFirstVal));
+               let modResult = eval(moduleFirstVal);
+               let resMod='';
+               resMod = (modResult * updateVal.slice(-3)) / 100;
+               total = modResult + resMod;
+        }
+        else 
+        if(updateVal.split('').slice(0, 3).includes('/')){
+            console.log('update split value division:>> ',  updateVal.split(/[+*/-]+/));
+            console.log('update split value division:>> ',  updateVal.split(/[+*/-]+/).join('/').slice(0, 3));
+            
+            let moduleFirstVal = updateVal.split(/[+*/-]+/).join('/').slice(0, 3);
+             console.log('update eval :>> ', eval(moduleFirstVal));
+               let modResult = eval(moduleFirstVal);
+               let resMod='';
+               resMod = (modResult * updateVal.slice(-3)) / 100;
+               total = modResult + resMod;
+        }
+        else 
+        if(newval=== '%'){
+            console.log('update value find operator :>> ', updateVal.split('').includes('%'));
+            total = total / 100;
+            innerResult.innerResult  = total;
+         }
  
         // console.log('newval :>> ', newval);
         // // console.log('update split value :>> ',  updateVal.split(/[+*/-]+/).reverse().join().substring(2));

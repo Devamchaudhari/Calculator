@@ -73,7 +73,7 @@ body{
    margin-top: -44px;
    color: #ffffffa3;
    width: 320px;
-   height: auto;
+   height: 80px;
    overflow-x: auto;
 }
 .calculator__display::-webkit-scrollbar{
@@ -87,6 +87,7 @@ display: none;
    text-align: right;
    height: auto;
    width: 320px;
+   height: 80px;
    overflow-x: auto;
  }
  .calculator__InnerResult::-webkit-scrollbar{
